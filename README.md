@@ -1,9 +1,12 @@
-# React TypeScript Starter Pack
+## React__gallery__app
 
-To use this template click `Use this template`
+DEMO LINK: https://bielichenko.github.io/react__developers__app/
 
-### Available Scripts
+## Installing
++ Fork and clone this repository
++ Run npm install in your terminal
++ Run npm start
+## Troubleshooting
+Any advise for common problems or issues. For any contributing or problem solving you could find me here [my linkedin](https://www.linkedin.com/in/illia-bielichenko-521435244/.) 
 
-`Deploy` - available to deploy your application to gh-pages
 
-`SCSS Preprocessor` - available to write your styles with modern style language
