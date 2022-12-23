@@ -1,3 +1,5 @@
+@import "../../utils/styles/mixins/onDesktop";
+
 .pictureCard {
   display: flex;
   flex-direction: column;
@@ -6,18 +8,18 @@
   margin-bottom: 10px;
 
   &__wrapper {
-    &__picture {
+    &__content {
       width: 120px;
       height: 150px;
 
-      @media (min-width: 500px) {
+      @include onDesktop {
         width: 170px;
         height: 200px;
       }
     }
   }
 
-  &__link {
+  &__author {
     font-size: 10px;
     line-height: 10px;
     text-decoration-line: none;

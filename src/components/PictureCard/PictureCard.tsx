@@ -1,6 +1,5 @@
-/* eslint-disable no-console */
-import React, { useEffect } from 'react';
-import { useAppDispatch } from '../../store/hook';
+import React from 'react';
+import { useAppDispatch } from '../../store/hooks';
 import { setSelectedPicture } from '../../store/slice';
 
 import { IPicture } from '../../types/IPicture';
@@ -15,12 +14,7 @@ export const PictureCard: React.FC<props> = ({ pictureData }) => {
   const { user, urls } = pictureData;
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    console.log(urls, 'urls');
-  });
-
   const pictureSelectionHandler = () => {
-    console.log(pictureData);
     dispatch(setSelectedPicture(pictureData));
   };
 
@@ -34,14 +28,14 @@ export const PictureCard: React.FC<props> = ({ pictureData }) => {
         tabIndex={0}
       >
         <img
-          className="pictureCard__wrapper__picture"
+          className="pictureCard__wrapper__content"
           src={urls.regular}
           alt="img"
         />
       </div>
 
       <a
-        className="pictureCard__link"
+        className="pictureCard__author"
         target="_blank"
         href={`https://unsplash.com/@${user.username}`}
         rel="noreferrer"
