@@ -1,16 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
+import cn from 'classnames';
+
 import './App.scss';
 import { createApi } from 'unsplash-js';
-import { ListComponent } from './components/ListComponent/ListComponent';
-import { SelectedPictureComponent } from './components/SelectedPictureComponent/SelectedPictureComponent';
+import { PicturesCatalog } from './components/PicturesCatalog/PicturesCatalog';
+import { SelectedPicture } from './components/SelectedPicture/SelectedPicture';
+import { useAppSelector } from './store/hook';
 
 export const App: React.FC = () => {
+  const picture = useAppSelector((state: any) => state.selectedPicture.selectedPicture);
+
   return (
-    <div className="app">
-      <SelectedPictureComponent />
-      <ListComponent />
+    <div className={cn('app', { 'app--displayPicture': picture })}>
+      <PicturesCatalog />
+      <SelectedPicture />
     </div>
   );
 };

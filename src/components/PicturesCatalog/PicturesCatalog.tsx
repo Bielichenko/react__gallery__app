@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import { createApi } from 'unsplash-js';
 import { IPicture } from '../../types/IPicture';
-import { PictureComponent } from '../PictureComponent/PictureComponent';
+import { PictureCard } from '../PictureCard/PictureCard';
 
-import './ListComponent.scss';
+import './PicturesCatalog.scss';
 
-export const ListComponent = () => {
+export const PicturesCatalog = () => {
   const [pictures, setPictures] = useState<any>([]);
 
   const api = createApi({
@@ -14,9 +15,10 @@ export const ListComponent = () => {
   });
 
   useEffect(() => {
-    api.search.getPhotos({ query: 'parrots', page: 2, perPage: 20 })
+    api.search.getPhotos({ query: 'parrots', page: 1, perPage: 30 })
       .then(res => {
         if (res.response) {
+          console.log(res.response.results.length);
           setPictures(res.response.results);
         }
       })
@@ -25,16 +27,12 @@ export const ListComponent = () => {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(pictures);
-  });
-
   return (
-    <div className="picturesList">
+    <div className="picturesCatalog">
       {pictures.map((pictureData: IPicture) => {
         return (
           <React.Fragment key={pictureData.id}>
-            <PictureComponent pictureData={pictureData} />
+            <PictureCard pictureData={pictureData} />
           </React.Fragment>
         );
       })}

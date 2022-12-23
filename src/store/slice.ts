@@ -16,8 +16,7 @@ export const selectedPictureSlice = createSlice({
   name: 'selectedPicture',
   initialState,
   reducers: {
-    setSelectedPicture(state, action: PayloadAction<IPicture>) {
-      console.log('state', state.selectedPicture);
+    setSelectedPicture(state, action: PayloadAction<null | IPicture>) {
       state.selectedPicture = action.payload;
     },
   },

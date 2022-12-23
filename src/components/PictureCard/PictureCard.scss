@@ -1,0 +1,26 @@
+.pictureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  margin-bottom: 10px;
+
+  &__wrapper {
+    &__picture {
+      width: 120px;
+      height: 150px;
+
+      @media (min-width: 500px) {
+        width: 170px;
+        height: 200px;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 10px;
+    line-height: 10px;
+    text-decoration-line: none;
+    color: #b3b3b3;
+  }
+}

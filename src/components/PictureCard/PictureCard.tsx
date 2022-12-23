@@ -5,13 +5,13 @@ import { setSelectedPicture } from '../../store/slice';
 
 import { IPicture } from '../../types/IPicture';
 
-import './PictureComponent.scss';
+import './PictureCard.scss';
 
 interface props {
   pictureData: IPicture;
 }
 
-export const PictureComponent: React.FC<props> = ({ pictureData }) => {
+export const PictureCard: React.FC<props> = ({ pictureData }) => {
   const { user, urls } = pictureData;
   const dispatch = useAppDispatch();
 
@@ -25,16 +25,23 @@ export const PictureComponent: React.FC<props> = ({ pictureData }) => {
   };
 
   return (
-    <div
-      className="pictureCard"
-      onClick={() => pictureSelectionHandler()}
-      onKeyUp={() => pictureSelectionHandler()}
-      role="button"
-      tabIndex={0}
-    >
-      <img className="pictureCard__picture" src={urls.thumb} alt="img" />
+    <div className="pictureCard">
+      <div
+        className="pictureCard__wrapper"
+        onClick={() => pictureSelectionHandler()}
+        onKeyUp={() => pictureSelectionHandler()}
+        role="button"
+        tabIndex={0}
+      >
+        <img
+          className="pictureCard__wrapper__picture"
+          src={urls.regular}
+          alt="img"
+        />
+      </div>
+
       <a
-        className="credit"
+        className="pictureCard__link"
         target="_blank"
         href={`https://unsplash.com/@${user.username}`}
         rel="noreferrer"
