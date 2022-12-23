@@ -1,6 +1,6 @@
 ## React__gallery__app
 
-DEMO LINK: https://bielichenko.github.io/react__developers__app/
+DEMO LINK: https://bielichenko.github.io/react__gallery__app/
 
 ## Installing
 + Fork and clone this repository
